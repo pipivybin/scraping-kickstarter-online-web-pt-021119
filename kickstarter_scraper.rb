@@ -4,10 +4,12 @@ require 'pry'
 
 
 def create_project_hash
+<<<<<<< HEAD
   allprojects = {}
 
   html = File.read('fixtures/kickstarter.html')
   kickstarter = Nokogiri::HTML(html)
+  binding.pry
   project = kickstarter.css("li.project.grid_4")
   project.each do
   |project|
@@ -30,5 +32,16 @@ end
 # location: project.css("ul.project-meta span.location-name").text
 # percentage: project.css("ul.project-stats li.first.funded strong").text.gsub("%","").to_i
 
+=======
+
+
+  html = File.read('fixtures/kickstarter.html')
+  kickstarter = Nokogiri::HTML(html)
+  kickstarter.css("li.project grid_4")
+binding.pry
+
+
+end
+>>>>>>> 7fe76edd9ca67a81ecd2cd8eee2017a30d226b63
 
 create_project_hash
